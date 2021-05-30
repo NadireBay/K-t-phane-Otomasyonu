@@ -1,11 +1,19 @@
-                    <ToggleButton Height="50" Style="{DynamicResource menubutonlar}" x:Name="menubuton_ayarlar" Click="menubuton_ayarlar_Click">
+ <ToggleButton Height="50" Style="{DynamicResource menubutonlar}" HorizontalContentAlignment="Left"
+                                  x:Name="menubuton_kitaplistesi" Click="menubuton_kitaplistesi_Click">
                         <DockPanel Width="220"  Margin="15,0,0,0">
                             <Image Source="Image/Icon/next.png" Width="32"/>
-                            <Label Content="Ayarlar" Foreground="White" x:Name="lbl_menu5"/>
+                            <Label Content="Kitap Listesi" Foreground="White" x:Name="lbl_menu1"/>
                         </DockPanel>
                     </ToggleButton>
-----------------------------------------------------------------,
- <Style x:Key="menubutonlar" TargetType="ToggleButton">
+                    <ToggleButton Height="50" Style="{DynamicResource menubutonlar}" x:Name="menubuton_okuyuculistesi"
+                                  Click="menubuton_okuyuculistesi_Click">
+                        <DockPanel Width="220"  Margin="15,0,0,0">
+                            <Image Source="Image/Icon/next.png" Width="32"/>
+                            <Label Content="Okuyucu Listesi" Foreground="White" x:Name="lbl_menu2"/>
+                        </DockPanel>
+                    </ToggleButton>
+------------------------------------------------------------------------------------------------------------------    <!-- menu butonları-->
+        <Style x:Key="menubutonlar" TargetType="ToggleButton">
             <Setter Property="Foreground" Value="#FF787878"/>
             <Setter Property="Margin" Value="0,0,0,1"/> 
 
