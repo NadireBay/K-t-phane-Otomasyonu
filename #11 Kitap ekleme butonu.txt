@@ -1,0 +1,33 @@
+<Button Style="{DynamicResource userKontrolKitapEkleButon}" Content="Kitap Ekle" x:Name="btn_kitapEkle" Click="btn_kitapEkle_Click"/>
+                
+---------------------------------------------------------------
+
+<Style x:Key="userKontrolKitapEkleButon" TargetType="Button">
+            <Setter Property="Foreground" Value="#FF3691D1"/>
+            <Setter Property="Margin" Value="0,0,0,1"/>
+            <Setter Property="FontSize" Value="9"/>
+            <Setter Property="Margin" Value="0,0,15,0"/>
+            <Setter Property="Width" Value="100"/>
+            <Setter Property="Height" Value="25"/>
+
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Name="border"
+                                BorderThickness="1,1,1,1"
+                                BorderBrush="#FF3691D1">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="border" Property="BorderBrush" Value="#FF3691D1"/>
+                                <Setter TargetName="border" Property="Background" Value="#CC3691D1"/>
+                                <Setter TargetName="border" Property="BorderThickness" Value="1,1,1,1"/>
+                                <Setter Property="Foreground" Value="#FF3691D1"/>
+                            </Trigger>
+
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
