@@ -1,0 +1,40 @@
+<Button Height="33" Width="35" Canvas.Left="794" Canvas.Top="26" Panel.ZIndex="5" Style="{DynamicResource daireButonBilgi}" x:Name="btn_KitapEkeBİlgi" 
+                    Click="btn_KitapEkeBilgi_Click" ToolTip="Bilgi Al"/>
+
+            <Grid Height="267" Width="260" Canvas.Left="808" Canvas.Top="-3" RenderTransformOrigin="0.5,0.5">
+                <Popup Placement="Center" x:Name="popup_bilgi" Margin="10,10,0,-10" AllowsTransparency="True" PopupAnimation="Scroll">
+                    <Border Background="#FF0C5180" Height="137" Width="221" CornerRadius="0,60,60,60">
+                        <StackPanel Margin="10,10,-23,0">
+                            <TextBlock Text="BILGILENDIRME" Foreground="White" FontWeight="Bold" HorizontalAlignment="Center"/>
+                            <TextBlock Text="&#10; Stok adedi girdiğinizde &#10; girilen sayı kadar kitap eklenecektir &#10; ve her kitapta otomatik &#10;demirbaş numarası verilecektir." 
+                                       Foreground="White" HorizontalAlignment="Center"/>
+                        </StackPanel>
+                    </Border>
+                </Popup>
+--------------------------------------------------------------------------------------------------------------
+<Style x:Key="daireButonBilgi" TargetType="Button">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Grid>
+                            <Ellipse x:Name="ButonDaire" Width="Auto" Height="Auto" Stroke="White"/>
+                            <Image Source="Image/Icon/info.png" Width="33" Height="auto" ToolTip="Bilgi Al"/>
+                            <ContentControl Content="{TemplateBinding Content}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="ButonDaire" Property="Width" Value="Auto"/>
+                                <Setter TargetName="ButonDaire" Property="Height" Value="Auto"/>
+                                <Setter TargetName="ButonDaire" Property="Fill" Value="#FF2965C1"/>
+                                <Setter Property="Cursor" Value="Hand"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+--------------------------------------------------------------------------------------------------------------
+   private void btn_KitapEkeBilgi_Click(object sender, RoutedEventArgs e)
+        {
+            Bonus.PopupShow(popup_bilgi);
+        }
