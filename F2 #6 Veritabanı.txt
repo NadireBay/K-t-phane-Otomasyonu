@@ -1,0 +1,59 @@
+
+            <Image Source="Image/Icon/book.png" Height="65" Canvas.Left="141" Width="70" Panel.ZIndex="3" Canvas.Top="26" x:Name="btn_KitapEkle" MouseDown="btn_KitapEkle_MouseDown"/>
+
+------------------------------------------------------
+
+  private void btn_KitapEkle_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (txt_Barkod.Text != "" /*&& cmb_KitapTuru.Text != "" */&& txt_KitapAdi.Text != "")  
+            {
+                Prm veri = new Prm();
+                Prm.BarKodNo = txt_Barkod.Text;
+                veri.Barkod = txt_Barkod.Text;
+                veri.KitapAdi = txt_KitapAdi.Text;
+                veri.BaskiYeri = cmb_BaskiYeri.Text;
+                veri.BaskiSayisi = txt_BaskiSayisi.Text;
+                veri.BaskiTarihi = dp_BaskiTarihi.Text;
+                veri.KitapTuru = cmb_KitapTuru.Text;
+                veri.SayfaSayisi = txt_SayfaSayisi.Text;
+                veri.Konusu = txt_Konusu.Text; 
+                veri.Dili = cmb_Dili.Text;
+                veri.TeminTuru = cmb_TeminTuru.Text;
+                veri.TeminTarihi = dp_TeminTarihi.Text;
+                
+                if (resimsecildimi == 1)
+                {
+                    veri.Resim = Prm.ResimAdi;
+                }
+                else
+                {
+                    veri.Resim = Environment.CurrentDirectory+"\\ KitapResmi\\Adsız.png";
+                }
+                
+                veri.YayinEviID = 1;
+                veri.YazarAdiID = 1;
+
+
+                if(DBislemci.EklemeIslemi(veri))
+                {
+                    Prm.Hata = 0;
+                    BilgiEkrani bilgi = new BilgiEkrani();
+                    Prm.BilgiEkraniContent = "Kayıt İşlemi Başarılı...";
+                    bilgi.Show();
+                }
+                else
+                {
+                    Prm.Hata = 1;
+                    BilgiEkrani bilgi = new BilgiEkrani();
+                    Prm.BilgiEkraniContent = "Kayıt İşlemi Başarısız!";
+                    bilgi.Show();
+                }
+            }
+            else
+            {
+                Prm.Hata = 1;
+                BilgiEkrani bilgi = new BilgiEkrani();
+                Prm.BilgiEkraniContent = "Zorunlu Alanları Doldurunuz!\n Barkod , Kitap Türü veya Kitap Adı";
+                bilgi.Show();
+            }
+        }
