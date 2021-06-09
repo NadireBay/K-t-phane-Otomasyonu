@@ -1,0 +1,110 @@
+  <Grid.RowDefinitions>
+
+            <RowDefinition/>
+            <RowDefinition Height="50"/>
+
+        </Grid.RowDefinitions>
+
+        <Border Grid.Row="0" Margin="3,3,3,0">
+            <DataGrid x:Name="dtg_OkuyucuListesi" Background="{x:Null}" ItemsSource="{Binding}" BorderBrush="{x:Null}" Foreground="#FF042263" IsReadOnly="True"
+                      RowHeight="30" CanUserAddRows="False" CanUserSortColumns="True" CanUserResizeColumns="False" CanUserResizeRows="False" 
+                      HorizontalGridLinesBrush="#FF9B9B9B" VerticalGridLinesBrush="#FFBBBBBB" HeadersVisibility="Column" AutoGenerateColumns="False"
+                       Style="{DynamicResource DataGridStyle1}">
+
+
+                <DataGrid.Columns>
+
+                    <DataGridTextColumn Binding="{Binding Path=OkulNo}" IsReadOnly="True" Header="Okuyucu No" MinWidth="50">
+
+                        <DataGridTextColumn.ElementStyle>
+                            <Style TargetType="TextBlock">
+                                <Setter Property="HorizontalAlignment" Value="Left"/>
+                                <Setter Property="VerticalAlignment" Value="Center"/>
+                                <Setter Property="Padding" Value="5"/>
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+
+                        <DataGridTextColumn.CellStyle>
+                            <Style TargetType="DataGridCell">
+                                <Setter Property="Background" Value="#2e61af"/>
+                                <Setter Property="BorderThickness" Value="5,0,0,0"/>
+                                <Setter Property="BorderBrush" Value="#ff134187"/>
+                                <Setter Property="Foreground" Value="White"/>
+                                <Style.Triggers>
+                                    <Trigger Property="IsSelected" Value="True">
+                                        <Setter Property="Background" Value="#ff131487"/>
+                                        <Setter Property="BorderThickness" Value="5,0,0,0"/>
+                                        <Setter Property="BorderBrush" Value="white"/>
+                                        <Setter Property="Foreground" Value="White"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </DataGridTextColumn.CellStyle>
+                    </DataGridTextColumn>
+
+                    <DataGridTextColumn Binding="{Binding Path=ID}" IsReadOnly="True" Header="" MaxWidth="2">
+
+                        <DataGridTextColumn.ElementStyle>
+                            <Style TargetType="TextBlock">
+                                <Setter Property="HorizontalAlignment" Value="Left"/>
+                                <Setter Property="VerticalAlignment" Value="Center"/>
+                                <Setter Property="Padding" Value="5"/>
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+
+                    </DataGridTextColumn>
+
+                    <DataGridTextColumn Binding="{Binding Path=AdSoyad}" IsReadOnly="True" Header="Ad-Soyad" MaxWidth="200" TextBlock.TextAlignment="Center" TextElement.FontStretch="Expanded">
+
+                        <DataGridTextColumn.ElementStyle>
+                            <Style TargetType="TextBlock">
+                                <Setter Property="HorizontalAlignment" Value="Left"/>
+                                <Setter Property="VerticalAlignment" Value="Center"/>
+                                <Setter Property="Padding" Value="5,0,5,0"/>
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+
+                    </DataGridTextColumn>
+
+                    <DataGridTextColumn Binding="{Binding Path=Telefon}" IsReadOnly="True" Header="Telefon" MaxWidth="200" TextBlock.TextAlignment="Center" TextElement.FontStretch="Expanded">
+
+                        <DataGridTextColumn.ElementStyle>
+                            <Style TargetType="TextBlock">
+                                <Setter Property="HorizontalAlignment" Value="Left"/>
+                                <Setter Property="VerticalAlignment" Value="Center"/>
+                                <Setter Property="Padding" Value="5,0,5,0"/>
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+
+                    </DataGridTextColumn>
+
+                    <DataGridTextColumn Binding="{Binding Path=Email}" IsReadOnly="True" Header="E-Mail" MaxWidth="200" TextBlock.TextAlignment="Center" TextElement.FontStretch="Expanded">
+
+                        <DataGridTextColumn.ElementStyle>
+                            <Style TargetType="TextBlock">
+                                <Setter Property="HorizontalAlignment" Value="Left"/>
+                                <Setter Property="VerticalAlignment" Value="Center"/>
+                                <Setter Property="Padding" Value="5,0,5,0"/>
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+
+                    </DataGridTextColumn>
+
+                    <DataGridTextColumn Binding="{Binding Path=Adresi}" IsReadOnly="True" Header="Adres" MaxWidth="300" TextBlock.TextAlignment="Center" TextElement.FontStretch="Expanded">
+
+                        <DataGridTextColumn.ElementStyle>
+                            <Style TargetType="TextBlock">
+                                <Setter Property="HorizontalAlignment" Value="Left"/>
+                                <Setter Property="VerticalAlignment" Value="Center"/>
+                                <Setter Property="Padding" Value="5,0,5,0"/>
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+
+                    </DataGridTextColumn>
+
+                </DataGrid.Columns>
+
+
+            </DataGrid>
+
+        </Border>
