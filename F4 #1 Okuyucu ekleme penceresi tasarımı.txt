@@ -1,0 +1,93 @@
+ <Grid>
+
+        <Canvas>
+
+            <Image Source="Image/Icon/book.png" Height="65" Canvas.Left="141" Width="70" Panel.ZIndex="3" Canvas.Top="26" x:Name="btn_KitapEkle" MouseDown="btn_KitapEkle_MouseDown"/>
+
+            <Label Content="Okuyucu Ekleme Penceresi" Height="33" Canvas.Left="234" Canvas.Top="26" Foreground="White" Panel.ZIndex="3" FontWeight="Bold" HorizontalAlignment="Left" VerticalContentAlignment="Center"
+                   Style="{DynamicResource Labelyanipson}"/>
+
+            <Rectangle Height="33" Width="639" Canvas.Left="155" Canvas.Top="26" Fill="#FF134187" Panel.ZIndex="1"/>
+
+            <Ellipse Height="111" Width="108" Canvas.Left="121" Canvas.Top="-2" Panel.ZIndex="2" StrokeThickness="4" RenderTransformOrigin="0.5,0.5" 
+                     Style="{DynamicResource don_dunya}">
+                <Ellipse.RenderTransform>
+                    <RotateTransform/>
+                </Ellipse.RenderTransform>
+                <Ellipse.Fill>
+                    <RadialGradientBrush>
+                        <GradientStop Color="#FF134187" Offset="0.963"/>
+                        <GradientStop Color="White" Offset="0.983"/>
+                        <GradientStop Color="#FFF1F2F3" Offset="0.937"/>
+                    </RadialGradientBrush>
+                </Ellipse.Fill>
+                <Ellipse.Stroke>
+                    <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                        <GradientStop Color="Black" Offset="0"/>
+                        <GradientStop Color="#FF134187" Offset="1"/>
+                        <GradientStop Color="White" Offset="0.713"/>
+                        <GradientStop Color="White" Offset="0.35"/>
+                    </LinearGradientBrush>
+                </Ellipse.Stroke>
+            </Ellipse>
+
+            <Border Height="350" Width="618" Canvas.Left="176" Canvas.Top="26" Background="#FFE0E0E0" CornerRadius="0,0,50,50">
+                <Border.Effect>
+                    <DropShadowEffect Opacity="0.35" Direction="275"/>
+                </Border.Effect>
+            </Border>
+
+            <!-- textbox ve labellar-->
+            <Label Content="Okuyucu No" Canvas.Left="312" Canvas.Top="84" Background="#FF134187" Foreground="White" Width="99" HorizontalContentAlignment="Center"/>
+            <TextBox Width="131" Canvas.Left="432" Canvas.Top="84" Height="26" Style="{DynamicResource MoseOverImageChange_TextBox}" x:Name="txt_OkuyucuNo" RenderTransformOrigin="0.133,0.79"/>
+
+            <Label Content="Ad - Soyad" Canvas.Left="312" Canvas.Top="130" Background="#FF134187" Foreground="White" Width="99" HorizontalContentAlignment="Center" BorderBrush="#FF134187"/>
+            <TextBox Width="131" Canvas.Left="432" Canvas.Top="130" Height="26" Style="{DynamicResource MoseOverImageChange_TextBox}" x:Name="txt_AdSoyad"/>
+
+            <Label Content="Telefon" Canvas.Left="312" Canvas.Top="173" Background="#FF134187" Foreground="White" Width="99" HorizontalContentAlignment="Center" RenderTransformOrigin="0.556,-0.543"/>
+            <TextBox Width="131" Canvas.Left="432" Canvas.Top="173" Height="26" Style="{DynamicResource MoseOverImageChange_TextBox}" x:Name="txt_Telefon"/>
+
+            <Label Content="E-Posta" Canvas.Left="312" Canvas.Top="218" Background="#FF134187" Foreground="White" Width="99" HorizontalContentAlignment="Center"/>
+            <TextBox Width="131" Canvas.Left="432" Canvas.Top="218" Height="26" Style="{DynamicResource MoseOverImageChange_TextBox}" x:Name="txt_EPosta"/>
+
+
+            <Label Content="Adres" Canvas.Left="312" Canvas.Top="265" Background="#FF134187" Foreground="White" Width="99" HorizontalContentAlignment="Center"/>
+            <TextBox Width="131" Canvas.Left="432" Canvas.Top="265" Height="73" Style="{DynamicResource MoseOverImageChange_TextBox}" x:Name="txt_Adresi"/>
+
+            <!-- Resim -->
+            <Ellipse Height="23" Canvas.Left="605" Canvas.Top="241" Width="107">
+                <Ellipse.Effect>
+                    <BlurEffect Radius="7"/>
+                </Ellipse.Effect>
+                <Ellipse.Fill>
+                    <RadialGradientBrush>
+                        <GradientStop Color="Black" Offset="0"/>
+                        <GradientStop Offset="1"/>
+                        <GradientStop Color="#4C898989" Offset="0.667"/>
+                    </RadialGradientBrush>
+                </Ellipse.Fill>
+            </Ellipse>
+
+            <!--Butonlar
+            <Button Height="66" Width="59" Canvas.Left="662" Canvas.Top="198" Style="{DynamicResource daireButon}" x:Name="btn_ResimEkle" Click="btn_ResimEkle_Click" RenderTransformOrigin="-1.314,0.525"/>
+-->
+            <Button Height="33" Width="35" Canvas.Left="747" Canvas.Top="26" Panel.ZIndex="5" Style="{DynamicResource daireButonIptal}" x:Name="btn_KitapEleKapat"
+                    Click="btn_KitapEleKapat_Click" ToolTip="Kapat"/>
+
+            <Button Height="33" Width="35" Canvas.Left="707" Canvas.Top="26" Panel.ZIndex="5" Style="{DynamicResource daireButonBilgi}" x:Name="btn_KitapEkeBİlgi" 
+                    Click="btn_KitapEkeBilgi_Click" ToolTip="Bilgi Al"/>
+
+            <Grid Height="267" Width="260" Canvas.Left="794" RenderTransformOrigin="0.5,0.5">
+                <Popup Placement="Center" x:Name="popup_bilgi" Margin="10,10,0,-10" AllowsTransparency="True" PopupAnimation="Scroll">
+                    <Border Background="#FF0C5180" Height="137" Width="221" CornerRadius="0,60,60,60">
+                        <StackPanel Margin="10,10,-23,0">
+                            <TextBlock Text="BILGILENDIRME" Foreground="White" FontWeight="Bold" HorizontalAlignment="Center"/>
+                            <TextBlock Text="&#10; Bilgilendirme." 
+                                       Foreground="White" HorizontalAlignment="Center"/>
+                        </StackPanel>
+                    </Border>
+                </Popup>
+            </Grid>
+
+
+        </Canvas>

@@ -1,0 +1,30 @@
+ public static bool Ekleme(Prm veri)
+        {
+            sbyte i = 0;
+            SQLiteConnection con = new SQLiteConnection(DBbaglanti.DBadres);
+            SQLiteCommand com = new SQLiteCommand("Insert into tbl_OkuyucuListesi " +
+             "(AdSoyad,Adresi,Email,Telefon,OkulNo) " +
+             "values(@AdSoyad,@Adresi,@Email,@Telefon,@OkulNo)", con);
+
+
+            com.Parameters.AddWithValue("@AdSoyad", veri.AdSoyad);
+            com.Parameters.AddWithValue("@Adresi", veri.Adresi);
+            com.Parameters.AddWithValue("@Email", veri.Email);
+            com.Parameters.AddWithValue("@Telefon", veri.Telefon);
+            com.Parameters.AddWithValue("@OkulNo", veri.OkulNo);
+            try
+            {
+                con.Open();
+                i = (sbyte)com.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+            finally
+            {
+                con.Dispose();
+            }
+            if (i > 0) return true; else return false;
+
+        }
