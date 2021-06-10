@@ -1,0 +1,41 @@
+
+            <Image Source="Image/Icon/book.png" Height="65" Canvas.Left="141" Width="70" Panel.ZIndex="3" Canvas.Top="26" x:Name="btn_KitapEkle" MouseDown="btn_KitapEkle_MouseDown"/>
+
+-----------------------------------------------------------
+
+ private void btn_KitapEkle_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (txt_OkuyucuNo.Text != "" && txt_AdSoyad.Text != "")
+            {
+                Prm veri = new Prm();
+                Prm.OkuyucuNo = txt_OkuyucuNo.Text;
+                veri.OkulNo = txt_OkuyucuNo.Text;
+                veri.AdSoyad = txt_AdSoyad.Text;
+                veri.Adresi = txt_Adresi.Text;
+                veri.Email = txt_EPosta.Text;
+                veri.Telefon = txt_Telefon.Text;
+
+                if (DBislemci.Ekleme(veri))
+                {
+                    Prm.Hata = 0;
+                    BilgiEkrani bilgi = new BilgiEkrani();
+                    Prm.BilgiEkraniContent = "Kayıt İşlemi Başarılı...";
+                    bilgi.Show();
+                }
+                else
+                {
+                    Prm.Hata = 1;
+                    BilgiEkrani bilgi = new BilgiEkrani();
+                    Prm.BilgiEkraniContent = "Kayıt İşlemi Başarısız!";
+                    bilgi.Show();
+                }
+            }
+            else
+            {
+                Prm.Hata = 1;
+                BilgiEkrani bilgi = new BilgiEkrani();
+                Prm.BilgiEkraniContent = "Zorunlu Alanları Doldurunuz!\n Okuyucu No , Ad Soyad veya Telefon";
+                bilgi.Show();
+            }
+        }
+
